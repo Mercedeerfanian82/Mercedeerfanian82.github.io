@@ -1,1 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercede Erfanian | Neuroscientist & Researcher</title>
+  <meta name="description" content="Academic portfolio of Mercede Erfanian – Researcher in cognitive neuroscience, affective neuroscience, psychophysiology, misophonia, and soundscape research." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --navy: #1a2744;
+      --teal: #2a7f7f;
+      --teal-light: #3a9f9f;
+      --accent: #e8a020;
+      --bg: #f8f9fc;
+      --white: #ffffff;
+      --text: #2d3748;
+      --text-light: #718096;
+      --border: #e2e8f0;
+      --card-bg: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26, 39, 68, 0.97);
+      backdrop-filter: blur(10px);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-brand {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #1e4060 50%, #1a5f5f 100%);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { position: relative; max-width: 800px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(42,127,127,0.3);
+      border: 1px solid rgba(42,127,127,0.6);
+      color: #7dd3d3;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+    }
+    .hero-institution {
+      font-size: 0.95rem;
+      color: #7dd3d3;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .hero-bio {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .tag {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.8);
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+    }
+    .hero-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+    .section-divider {
+      width: 50px; height: 3px;
+      background: var(--teal);
+      margin-bottom: 2.5rem;
+      border-radius: 2px;
+    }
+
+    /* ABOUT */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-size: 0.97rem;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .stat-card {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 500;
+      margin-top: 0.2rem;
+    }
+
+    /* RESEARCH INTERESTS */
+    #research { background: var(--bg); }
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .interest-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .interest-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .interest-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .interest-card h3 { font-size: 0.97rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+    .interest-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+
+    /* PUBLICATIONS */
+    #publications { background: var(--white); }
+    .pub-filters {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text-light);
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--white);
+    }
+    .pub-list { display: flex; flex-direction: column; gap: 1rem; }
+    .pub-item {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 1.3rem 1.5rem;
+      border-left: 3px solid var(--teal);
+      transition: box-shadow 0.2s;
+    }
+    .pub-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.07); }
+    .pub-year {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.3rem;
+    }
+    .pub-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+      line-height: 1.5;
+    }
+    .pub-authors {
+      font-size: 0.83rem;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    .pub-journal {
+      font-size: 0.82rem;
+      color: var(--teal);
+      font-style: italic;
+    }
+    .pub-badge {
+      display: inline-block;
+      background: rgba(232,160,32,0.12);
+      color: #b07800;
+      border: 1px solid rgba(232,160,32,0.3);
+      padding: 0.1rem 0.5rem;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .pub-badge.high { background: rgba(42,127,127,0.1); color: var(--teal); border-color: rgba(42,127,127,0.3); }
+
+    /* CV */
+    #cv { background: var(--bg); }
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .cv-section-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cv-item {
+      margin-bottom: 1.2rem;
+    }
+    .cv-item-title {
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .cv-item-sub {
+      font-size: 0.83rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+    .cv-item-date {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 0.1rem;
+    }
+    .skills-grid {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .skill-tag {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.25rem 0.7rem;
+      border-radius: 15px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .cv-download-box {
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      color: var(--white);
+      margin-top: 2rem;
+    }
+    .cv-download-box h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .cv-download-box p { font-size: 0.88rem; opacity: 0.8; margin-bottom: 1.2rem; }
+
+    /* MEDIA */
+    #media { background: var(--white); }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .media-item {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 1.2rem;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+    }
+    .media-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.07); }
+    .media-outlet {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.4rem;
+    }
+    .media-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.5;
+      margin-bottom: 0.3rem;
+    }
+    .media-year { font-size: 0.75rem; color: var(--text-light); }
+
+    /* CONTACT */
+    #contact {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e4060 100%);
+      color: var(--white);
+    }
+    #contact .section-title { color: var(--white); }
+    #contact .section-label { color: #7dd3d3; }
+    #contact .section-divider { background: #7dd3d3; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .contact-card:hover { background: rgba(255,255,255,0.12); }
+    .contact-card a { text-decoration: none; color: inherit; }
+    .contact-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .contact-type {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7dd3d3;
+      margin-bottom: 0.3rem;
+    }
+    .contact-value {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.85);
+      word-break: break-all;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .about-grid, .cv-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+
+    /* HIDDEN pub sections */
+    .pub-section { display: none; }
+    .pub-section.active { display: flex; flex-direction: column; gap: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">Mercede Erfanian</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Cognitive Neuroscience · Affective Neuroscience · Psychophysiology · Behavioural Science</div>
+    <h1>Mercede Erfanian</h1>
+    <p class="hero-institution">ESSCA · Lyon, France</p>
+    <p class="hero-bio">
+      Quantitative researcher integrating complex behavioural paradigms with psychophysiological and neurocognitive measures. My work spans perception, decision-making, affective processes, soundscape, and misophonia — with a strong emphasis on rigorous experimental design and reproducible analysis.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Misophonia</span>
+      <span class="tag">Soundscape</span>
+      <span class="tag">Pupillometry</span>
+      <span class="tag">Decision-Making</span>
+      <span class="tag">EEG · fMRI</span>
+      <span class="tag">Psychophysiology</span>
+      <span class="tag">Affective Neuroscience &amp; Psychopathology</span>
+    </div>
+    <div class="hero-links">
+      <a href="#publications" class="btn btn-primary">View Publications</a>
+      <a href="https://orcid.org/0000-0001-9253-4162" target="_blank" class="btn btn-outline">ORCID Profile</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am a researcher at ESSCA, France, with a PhD in Cognitive Neuroscience from University College London (UCL), funded by the European Research Council (ERC). My academic journey spans clinical psychology, affective neuroscience (MRes, joint degree from Maastricht University and the Medical University of Florence), and cognitive neuroscience.
+        </p>
+        <p>
+          My research integrates psychophysiological measures — including pupillometry, electrodermal activity, EEG, and fMRI — with advanced behavioural paradigms to understand how humans perceive, process, and respond to their auditory and social environments.
+        </p>
+        <p>
+          I am particularly known for my contributions to misophonia research, soundscape science, and the psychophysiology of auditory perception. I am also passionate about teaching quantitative methods, statistics, and experimental psychology across psychology, economics, and business education contexts.
+        </p>
+        <p>
+          Beyond the lab, I create science podcasts for the public, play professional badminton, and am a frequent voice in international media on topics of sound and the mind.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">35+</div>
+          <div class="stat-label">Publications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Conference Presentations</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Grants &amp; Awards</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Media Appearances</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <div class="section-label">Research</div>
+    <h2 class="section-title">Research Interests</h2>
+    <div class="section-divider"></div>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <div class="interest-icon">🔊</div>
+        <h3>Misophonia</h3>
+        <p>Investigating the neurobiological, psychophysiological, and cognitive underpinnings of misophonia — including its relationship with emotional regulation, empathy, and sensory processing disorders.</p>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🌆</div>
+        <h3>Soundscape Science</h3>
+        <p>Large-scale studies on how urban acoustic environments affect psychological well-being, physiological arousal, and subjective perception — contributing to international soundscape indices (SSID).</p>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">👁️</div>
+        <h3>Pupillometry &amp; Psychophysiology</h3>
+        <p>Using pupil-linked arousal, electrodermal activity, ECG, and EEG as objective, continuous indices of cognitive and affective processes in auditory and decision-making paradigms.</p>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🧠</div>
+        <h3>Decision-Making</h3>
+        <p>Examining how cognitive load, default nudges, and affective states shape human decision-making, using behavioural and occulomotor measures (eye-tracking, pupillometry).</p>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">📊</div>
+        <h3>Quantitative Methods</h3>
+        <p>Developing and applying advanced statistical and computational approaches — including confirmatory factor analysis, IRT, and psychometric evaluation — to psychological and neuroscientific data.</p>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🎓</div>
+        <h3>Teaching &amp; Pedagogy</h3>
+        <p>Teaching quantitative research methods, statistics, experimental psychology, and behavioural science across psychology, economics, and business education at undergraduate and postgraduate levels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="section-label">Publications</div>
+    <h2 class="section-title">Selected Publications</h2>
+    <div class="section-divider"></div>
+
+    <div class="pub-filters">
+      <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
+      <button class="filter-btn" onclick="filterPubs('hearing', this)">Hearing &amp; Disorders</button>
+      <button class="filter-btn" onclick="filterPubs('acoustics', this)">Soundscape &amp; Acoustics</button>
+      <button class="filter-btn" onclick="filterPubs('psychophys', this)">Psychophysiology</button>
+      <button class="filter-btn" onclick="filterPubs('modeling', this)">Modelling &amp; Methods</button>
+      <button class="filter-btn" onclick="filterPubs('decision', this)">Decision Making</button>
+    </div>
+
+    <div class="pub-list" id="pub-all">
+
+      <!-- 2026 -->
+      <div class="pub-item" data-cat="decision">
+        <div class="pub-year">2026 — In Preparation</div>
+        <div class="pub-title">The Effect of Default Nudge and Cognitive Load on Decision-Making: What the Eyes Reveal</div>
+        <div class="pub-authors">Erfanian, M., Rajabi, M., Meunier, L., Teye, P., Heimann, M., Gajewski, JF.</div>
+      </div>
+
+      <!-- 2025 In Press -->
+      <div class="pub-item" data-cat="decision">
+        <div class="pub-year">2026 — In Press</div>
+        <div class="pub-title">The Effect of Cognitive Load and Default Nudges on Decision-Making: Experimental Evidence from a Behavioural Study <span class="pub-badge">In Press</span></div>
+        <div class="pub-authors">Erfanian, M., Meunier, L., Gajewski, J-F.</div>
+        <div class="pub-journal">Journal of Behavioral Decision Making · <a href="https://doi.org/10.1101/2025.05.05.652071" target="_blank" style="color:var(--teal);">doi: 10.1101/2025.05.05.652071</a></div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2025</div>
+        <div class="pub-title">Misophonia Symptoms Severity is Attributed to Impaired Flexibility and Heightened Rumination <span class="pub-badge high">Q1</span></div>
+        <div class="pub-authors">Black, V., Allen, JD., Aazh, H., Johnson, SL., Erfanian, M.</div>
+        <div class="pub-journal">British Journal of Psychology · IF: 3.3 · ABS: 3</div>
+      </div>
+
+      <div class="pub-item" data-cat="psychophys">
+        <div class="pub-year">2025</div>
+        <div class="pub-title">Pupil-linked arousal does not differ between 'white', 'pink' and 'brown' noises</div>
+        <div class="pub-authors">Erfanian, M., Chait, M., Kang, J.</div>
+        <div class="pub-journal">IF: 2.6</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2025</div>
+        <div class="pub-title">Loudness and sound category: Their distinct roles in shaping perceptual and physiological attributes of soundscape</div>
+        <div class="pub-authors">Erfanian, M., Oberman, T., Chait, M., Kang, J.</div>
+        <div class="pub-journal">eNeuro · IF: 2.7</div>
+      </div>
+
+      <div class="pub-item" data-cat="modeling">
+        <div class="pub-year">2025</div>
+        <div class="pub-title">Hyperacusis impact questionnaire: translation and psychometric evaluation of the Persian version</div>
+        <div class="pub-authors">Azizi, M., Fathollahzadeh, F., Nazeri, A., Erfanian, M., et al.</div>
+        <div class="pub-journal">International Journal of Audiology · IF: 1.9</div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="pub-item" data-cat="modeling">
+        <div class="pub-year">2024</div>
+        <div class="pub-title">Confirmatory factor analysis of the Tinnitus Impact Questionnaire</div>
+        <div class="pub-authors">Aazh, H., Moore, B.C.J., Erfanian, M.</div>
+        <div class="pub-journal">PLoS ONE · IF: 2.6</div>
+      </div>
+
+      <div class="pub-item" data-cat="psychophys">
+        <div class="pub-year">2024</div>
+        <div class="pub-title">Research priorities for autonomous sensory meridian response: an interdisciplinary Delphi study</div>
+        <div class="pub-authors">Hostler, T.J., et al. including Erfanian, M.</div>
+        <div class="pub-journal">Multisensory Research · IF: 1.5</div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="pub-item" data-cat="modeling hearing">
+        <div class="pub-year">2023</div>
+        <div class="pub-title">Confirmatory factor analysis of the Hyperacusis Impact Questionnaire, Sound Sensitivity Symptoms Questionnaire, and Screening for Anxiety and Depression in Tinnitus</div>
+        <div class="pub-authors">Aazh, H., Hayes, C., Erfanian, M., Moore, B.C.J., Vitoratou, S.</div>
+        <div class="pub-journal">Journal of the American Academy of Audiology · IF: 1.2</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2023</div>
+        <div class="pub-title">A conceptual framework for the practical use of predictive models and Soundscape Indices: Goals, constraints, and applications</div>
+        <div class="pub-authors">Mitchell, A., Aletta, F., Oberman, T., Erfanian, M., Kang, J.</div>
+        <div class="pub-journal">INTER-NOISE and NOISE-CON Congress and Conference Proceedings · IF: 2.6</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2023</div>
+        <div class="pub-title">Soundscape experience of public spaces in different world regions: A comparison between the European and Chinese contexts via a large-scale on-site survey</div>
+        <div class="pub-authors">Aletta, F., Oberman, T., Mitchell, A., Erfanian, M., Kang, J.</div>
+        <div class="pub-journal">Journal of the Acoustical Society of America · IF: 2.3</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2023</div>
+        <div class="pub-title">On the development of soundscape indices (SSID)</div>
+        <div class="pub-authors">Kang, J., Aletta, F., Oberman, T., Mitchell, A., Erfanian, M.</div>
+        <div class="pub-journal">Proceedings of the International Congress on Sound and Vibration · IF: 2</div>
+      </div>
+
+      <!-- 2022 -->
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2022</div>
+        <div class="pub-title">Subjective evaluation of environmental sounds in context — towards Soundscape Indices (SSID)</div>
+        <div class="pub-authors">Kang, J., Aletta, F., Oberman, T., Mitchell, A., Erfanian, M.</div>
+        <div class="pub-journal">Forum Acusticum · IF: 2.5</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2022</div>
+        <div class="pub-title">Investigating urban soundscapes of the COVID-19 lockdown: A predictive soundscape modelling approach</div>
+        <div class="pub-authors">Mitchell, A., Oberman, T., Aletta, F., Kachlicka, M., Lionello, M., Erfanian, M., Kang, J.</div>
+        <div class="pub-journal">Journal of the Acoustical Society of America · IF: 2.3</div>
+      </div>
+
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2022</div>
+        <div class="pub-title">Consensus Definition of Misophonia: A Delphi Study</div>
+        <div class="pub-authors">Swedo, S., Baguley, D.M., Denys, D., Dixon, L.J., Erfanian, M., et al.</div>
+        <div class="pub-journal">Frontiers in Auditory Neuroscience · IF: 3.2</div>
+      </div>
+
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2022</div>
+        <div class="pub-title">Audiological and other factors predicting the presence of misophonia symptoms among a clinical population seeking help for tinnitus and/or hyperacusis</div>
+        <div class="pub-authors">Aazh, H., Erfanian, M., Danesh, A.A., Moore, B.C.J.</div>
+        <div class="pub-journal">Frontiers in Neuroscience · IF: 3.2</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2022</div>
+        <div class="pub-title">Supportive soundscapes are crucial for sustainable environments</div>
+        <div class="pub-authors">Kang, J., Aletta, F., Oberman, T., Mitchell, A., Erfanian, M., et al.</div>
+        <div class="pub-journal">Science of the Total Environment · IF: 8</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2022</div>
+        <div class="pub-title">Effects of Soundscape Complexity on Urban Noise Annoyance Ratings: A Large-Scale Online Listening Experiment</div>
+        <div class="pub-authors">Mitchell, A., Erfanian, M., Soelistyo, C., Oberman, T., Kang, J., et al.</div>
+        <div class="pub-journal">Journal of Environmental Research and Public Health · IF: 4.6</div>
+      </div>
+
+      <!-- 2021 -->
+      <div class="pub-item" data-cat="modeling hearing">
+        <div class="pub-year">2021</div>
+        <div class="pub-title">Item response theory investigation of misophonia auditory triggers</div>
+        <div class="pub-authors">Vitoratou, S., Uglik-Marucha, E., Hayes, C., Erfanian, M., Gregory, J.</div>
+        <div class="pub-journal">Auditory Research · IF: 3</div>
+      </div>
+
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2021</div>
+        <div class="pub-title">The motor basis for misophonia <span class="pub-badge high">High Impact</span></div>
+        <div class="pub-authors">Kumar, S., Dheerendra, P., Erfanian, M., Benzaquén, E., Sedley, W., et al.</div>
+        <div class="pub-journal">Journal of Neuroscience · IF: 4</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2021</div>
+        <div class="pub-title">Psychological Well-being, Age, and Gender can Mediate Soundscape: A Large-Sample Study <span class="pub-badge high">Q1</span></div>
+        <div class="pub-authors">Erfanian, M., Mitchell, J.J., Aletta, F., Kang, A.</div>
+        <div class="pub-journal">Journal of Environmental Psychology · IF: 7 · ABS: 3</div>
+      </div>
+
+      <!-- 2020 -->
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2020</div>
+        <div class="pub-title">The Soundscape Indices (SSID) Protocol: A method for urban soundscape</div>
+        <div class="pub-authors">Mitchell, A., Oberman, T., Aletta, F., Erfanian, M., Kachlicka, M., Lionello, M., Kang, J.</div>
+        <div class="pub-journal">Journal of Applied Sciences · IF: 2.5</div>
+      </div>
+
+      <!-- 2019 -->
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2019</div>
+        <div class="pub-title">Making cities smarter with new soundscape indices</div>
+        <div class="pub-authors">Mitchell, A., Aletta, F., Oberman, T., Erfanian, M., Kachlicka, M., Lionello, M., Kang, J.</div>
+        <div class="pub-journal">Journal of the Acoustical Society of America · IF: 2.3</div>
+      </div>
+
+      <div class="pub-item" data-cat="acoustics">
+        <div class="pub-year">2019</div>
+        <div class="pub-title">A field study on associations between soundscape experience and self-reported well-being measures in open public urban spaces <span class="pub-badge high">IF 88.5</span></div>
+        <div class="pub-authors">Aletta, F., Oberman, T., Mitchell, A., Erfanian, M., et al.</div>
+        <div class="pub-journal">The Lancet · IF: 88.5</div>
+      </div>
+
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2019</div>
+        <div class="pub-title">Misophonia and comorbid Psychiatric Symptoms: A Preliminary Study of Clinical Findings</div>
+        <div class="pub-authors">Erfanian, M., Kartsonaki, C., Keshavarz, A.</div>
+        <div class="pub-journal">Nordic Journal of Psychiatry · IF: 1.5</div>
+      </div>
+
+      <div class="pub-item" data-cat="psychophys acoustics">
+        <div class="pub-year">2019</div>
+        <div class="pub-title">The Psychophysiology of Soundscape: A Systematic Review of Empirical Literature</div>
+        <div class="pub-authors">Erfanian, M., Mitchell, J.A., Kang, J., Aletta, F.</div>
+        <div class="pub-journal">Journal of Environmental Research and Public Health · IF: 4.6</div>
+      </div>
+
+      <!-- 2018 -->
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2018</div>
+        <div class="pub-title">Emotional and cognitive characteristics of Misophonia</div>
+        <div class="pub-authors">Erfanian, M., &amp; Rouw, R.</div>
+        <div class="pub-journal">European Neuropsychopharmacology · IF: 6.7</div>
+      </div>
+
+      <div class="pub-item" data-cat="psychophys">
+        <div class="pub-year">2018</div>
+        <div class="pub-title">Childhood trauma: A factor for increased risk of major depression in patients with psoriasis</div>
+        <div class="pub-authors">Erfanian, M.</div>
+        <div class="pub-journal">Psychiatry and Clinical Psychopharmacology · IF: 0.6</div>
+      </div>
+
+      <!-- 2017 -->
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2017</div>
+        <div class="pub-title">Misophonia and affective disorders: The relationship and clinical perspective</div>
+        <div class="pub-authors">Erfanian, M., Brout, J.J., &amp; Keshavarz, A.</div>
+        <div class="pub-journal">European Psychiatry · IF: 6.7</div>
+      </div>
+
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2017</div>
+        <div class="pub-title">A Large-Scale Study of Misophonia</div>
+        <div class="pub-authors">Rouw, R., &amp; Erfanian, M.</div>
+        <div class="pub-journal">Journal of Clinical Psychology · IF: 2.5</div>
+      </div>
+
+      <div class="pub-item" data-cat="hearing">
+        <div class="pub-year">2017</div>
+        <div class="pub-title">Investigating misophonia: A review of the literature, clinical implications and research agenda</div>
+        <div class="pub-authors">Brout, J.J., Edelstein, M., Erfanian, M., Kumar, S., et al.</div>
+        <div class="pub-journal">Frontiers in Human Neuroscience · IF: 3.2</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- MEDIA -->
+<section id="media">
+  <div class="container">
+    <div class="section-label">Media</div>
+    <h2 class="section-title">In the News</h2>
+    <div class="section-divider"></div>
+    <div class="media-grid">
+      <div class="media-item">
+        <a href="https://www.psypost.org/only-the-tip-of-the-iceberg-misophonia-may-reflect-deeper-psychological-realities/" target="_blank" style="text-decoration:none;color:inherit;">
+          <div class="media-outlet">PsychPost · 2025 ↗</div>
+          <div class="media-title">"Only the tip of the iceberg:" Misophonia may reflect deeper psychological realities</div>
+        </a>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">SAGA · 2025</div>
+        <div class="media-title">What are white, pink and brown noise, and can they help your health?</div>
+      </div>
+      <div class="media-item">
+        <a href="https://psyche.co/ideas/the-reason-little-noises-drive-you-mad-is-about-more-than-sounds" target="_blank" style="text-decoration:none;color:inherit;">
+          <div class="media-outlet">Psyche Magazine · 2024 ↗</div>
+          <div class="media-title">The reason little noises drive you mad is about more than sounds</div>
+        </a>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">NHPR Radio · 2023</div>
+        <div class="media-title">New Hampshire Public Radio — Sound sensitivity &amp; misophonia</div>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">NPR / 1A · 2022</div>
+        <div class="media-title">Scientific Method: Can 'color sounds' help us get things done?</div>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">VICE New York · 2021</div>
+        <div class="media-title">If you can't stand people fidgeting...</div>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">BBC (Belfast, London) · 2021</div>
+        <div class="media-title">BBC appearances on misophonia and sound sensitivity</div>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">Oprah Magazine · 2019</div>
+        <div class="media-title">Do you hear what I hear?</div>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">BBC Podcast · 2018</div>
+        <div class="media-title">Phenomenology of Misophonia — Interview</div>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">Huffington Post · 2017</div>
+        <div class="media-title">Huge Scientific Breakthroughs for Misophonia and Sound Intolerance</div>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">Philadelphia Daily News · 2015</div>
+        <div class="media-title">Don't wanna hear it: When sounds become unbearable</div>
+      </div>
+      <div class="media-item">
+        <div class="media-outlet">Imperial College London · 2018</div>
+        <div class="media-title">Misophonia: General perspective — I-Science Journal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="section-divider"></div>
+    <p style="color:rgba(255,255,255,0.7); margin-bottom:2rem; max-width:550px;">
+      I welcome collaborations, media inquiries, and discussions about misophonia, soundscape, and psychophysiology research.
+    </p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div class="contact-type">Email</div>
+        <div class="contact-value">
+          <a href="mailto:mercedeh.erfanianghasab@essca.fr">mercedeh.erfanianghasab<br>@essca.fr</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <a href="https://orcid.org/0000-0001-9253-4162" target="_blank">
+          <div class="contact-icon">🔬</div>
+          <div class="contact-type">ORCID</div>
+          <div class="contact-value">0000-0001-9253-4162</div>
+        </a>
+      </div>
+      <div class="contact-card">
+        <a href="https://github.com/Mercedeerfanian82" target="_blank">
+          <div class="contact-icon">💻</div>
+          <div class="contact-type">GitHub</div>
+          <div class="contact-value">Mercedeerfanian82</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Mercede Erfanian · Built with GitHub Pages · Web of Science ResearcherID: W-8022-2018</p>
+</footer>
+
+<script>
+  function filterPubs(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const items = document.querySelectorAll('.pub-item');
+    items.forEach(item => {
+      if (cat === 'all') {
+        item.style.display = '';
+      } else {
+        const cats = (item.dataset.cat || '').split(' ');
+        item.style.display = cats.includes(cat) ? '' : 'none';
+      }
+    });
+  }
+
+  // Smooth scroll offset for fixed nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 65, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
